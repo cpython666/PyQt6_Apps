@@ -7,6 +7,12 @@
 
 ### [手写字体图片生成器](https://github.com/w-x-x-w/HandwritingGenerator)
 
+### [纯色图片生成器](./ImageCreator)
+
+### [视频文案提取器]()【进行中】
+
+### [蚊香图生成器]()【进行中】
+
 ### [计算器](./Calculator)【未完成】
 
 ### [任务清单应用](./TodoApp)【未完成】
