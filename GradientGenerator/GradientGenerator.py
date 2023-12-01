@@ -42,7 +42,9 @@ class GradientWindow(QMainWindow):
         self.window_width=1000
         self.window_height=500
         self.pre_width=500
-        self.colors = [{'position':0, 'color':QColor(255, 0, 0)}, {'position':1,'color':QColor(255, 255, 0)}]
+        self.colors = [{'position':0, 'color':QColor('#12c2e9')},
+                       {'position':0.5,'color':QColor('#c471ed')},
+                       {'position':1,'color':QColor('#f64f59')}]
 
         self.initUI()
         self.initLayout()
