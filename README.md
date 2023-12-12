@@ -1,6 +1,12 @@
 # PyQt6 小软件集合
 > 这个仓库包含了使用 PyQt6 开发的多个小软件。每个软件都位于仓库的不同目录中。
 >
+> 
+>
+> 我决定将这些软件开源出来，一方面是希望有需要的同学可以直接用到，一方面是给像我一样正在学习pyqt6的同学一些借鉴。
+>
+> 
+>
 > This repository contains several small applications developed using PyQt6. Each software is located in a different directory within the repository.
 
 ## 项目列表 
@@ -10,6 +16,10 @@
 ### [纯色图片生成器](./ImageCreator)
 
 ### [渐变图片生成器](./GradientGenerator)
+
+### [自我介绍生成器](./自我介绍生成器)
+
+### [帅哥验证器](./帅哥验证器)
 
 ### [视频文案提取器]()【进行中】
 

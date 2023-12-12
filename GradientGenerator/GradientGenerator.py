@@ -36,15 +36,15 @@ class GradientWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        self.width = 200
-        self.height = 200
+        self.width = 4000
+        self.height = 3000
         self.angle = 135
         self.window_width=1000
         self.window_height=500
         self.pre_width=500
-        self.colors = [{'position':0, 'color':QColor('#12c2e9')},
-                       {'position':0.5,'color':QColor('#c471ed')},
-                       {'position':1,'color':QColor('#f64f59')}]
+        self.colors = [{'position':0, 'color':QColor('#FC466B')},
+                    #    {'position':0.5,'color':QColor('#b21f1f')},
+                       {'position':1,'color':QColor('#3F5EFB')}]
 
         self.initUI()
         self.initLayout()
@@ -300,7 +300,6 @@ class GradientWindow(QMainWindow):
         self.colors[parent.index]['color']=color_tmp
         parent.button_color.setStyleSheet(f"background-color:{color_tmp.name()}")
         self.update_preview()
-
     
     def update_list_item_button(self):
         color = QColorDialog.getColor()
