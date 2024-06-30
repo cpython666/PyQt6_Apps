@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Navigation Example</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .tree {
+      list-style: none;
+      padding-left: 20px;
+    }
+    .tree li {
+      position: relative;
+      padding-left: 20px;
+    }
+    .tree li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 10px;
+      height: 1px;
+      background: #000;
+    }
+    .tree li::after {
+      content: '';
+      position: absolute;
+      left: 10px;
+      top: -10px;
+      bottom: 10px;
+      width: 1px;
+      background: #000;
+    }
+    .tree li:last-child::after {
+      display: none;
+    }
+    .tree-toggle {
+      cursor: pointer;
+    }
+    .tree-toggle::before {
+      content: '\f078';
+      font-family: 'FontAwesome';
+      padding-right: 5px;
+    }
+    .tree .tree-child {
+      display: none;
+    }
+    .tree .tree-child.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <ul class="tree">
+      <li>
+        <span class="tree-toggle">Root</span>
+        <ul class="tree-child">
+          <li>
+            <span class="tree-toggle">Child 1</span>
+            <ul class="tree-child">
+              <li>Sub Child 1-1</li>
+              <li>Sub Child 1-2</li>
+            </ul>
+          </li>
+          <li>
+            <span class="tree-toggle">Child 2</span>
+            <ul class="tree-child">
+              <li>Sub Child 2-1</li>
+              <li>Sub Child 2-2</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    document.querySelectorAll('.tree-toggle').forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const nextSibling = toggle.nextElementSibling;
+        if (nextSibling.classList.contains('tree-child')) {
+          nextSibling.classList.toggle('show');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

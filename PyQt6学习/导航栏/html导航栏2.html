@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>左侧导航栏</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            padding-top: 20px;
+            transition: all 0.3s;
+        }
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+            width: 100%;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+        .sidebar .submenu {
+            display: none;
+            background-color: #444;
+        }
+        .sidebar .submenu a {
+            padding-left: 30px;
+        }
+        .sidebar .menu-item {
+            cursor: pointer;
+        }
+        .sidebar .menu-item.active .submenu {
+            display: block;
+        }
+        .sidebar .menu-item i {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <div class="menu-item">
+        <a><i class="fas fa-home"></i> 主页</a>
+    </div>
+    <div class="menu-item">
+        <a><i class="fas fa-film"></i> 视频</a>
+        <div class="submenu">
+            <a href="#">热门视频</a>
+            <a href="#">最新视频</a>
+            <a href="#">分类</a>
+        </div>
+    </div>
+    <div class="menu-item">
+        <a><i class="fas fa-heart"></i> 收藏</a>
+    </div>
+    <div class="menu-item">
+        <a><i class="fas fa-comments"></i> 评论</a>
+    </div>
+    <div class="menu-item">
+        <a><i class="fas fa-search"></i> 搜索</a>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('.menu-item > a').forEach(item => {
+        item.addEventListener('click', () => {
+            const parent = item.parentElement;
+            const submenu = parent.querySelector('.submenu');
+
+            if (submenu) {
+                parent.classList.toggle('active');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
